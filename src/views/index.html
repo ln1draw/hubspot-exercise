@@ -16,7 +16,7 @@
     <h2>Exercise 1 - Testimonial Block</h2>
   </div>
 
-  <div>
+  <div id="testimonial">
     <div>
       <div>
         <p>Gingerbread tart cupcake cake muffin cookie liquorice tiramisu. Toffee cupcake cake cake croissant icing carrot cake cookie. Dessert chocolate bar apple pie sesame snaps liquorice carrot cake cookie danish.</p>
@@ -30,7 +30,31 @@
     <h2>Exercise 2 - Filterable Content</h2>
   </div>
 
-  <div>[Exercise 2 Here]</div>
+  <div class="exercise-body">
+    <form class="filter-header" id="filter-form">
+      <span class="filter-left">
+        <input type="button" id="genre-toggle" class="toggle" aria-label="select from list of genres" aria-haspopup="true" aria-expanded="false" value="GENRE"/>
+        <ul id="genre-box" class="filter-box"></ul>
+
+        <input type="button" id="year-toggle" class="toggle" aria-label="select from list of years"value="YEAR"/>
+        <ul id="year-box" class="filter-box"></ul>
+
+        <div class="media-type-box">
+          <input name="media-type" value="movie" id="media-movie" type="radio"/>
+          <label for="media-movie">Movies</label>
+          <input name="media-type" value="book" id="media-book" type="radio"/>
+          <label for="media-book">Books</label>
+        </div>
+      </span>
+      <span class="filter-right">
+        <input type="reset" value="clear filters" class="uppercase" id="reset"/>
+      </span>
+    </form>
+
+    <div id="media-contents">
+
+    </div>
+  </div>
 
 </body>
 

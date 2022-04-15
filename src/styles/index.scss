@@ -1,0 +1,207 @@
+/* COLOR VARIABLES */
+$black: #000000;
+$detail-blue: #3AA4E1;
+$white: #FFFFFF;
+$grey: #F9F8F7;
+
+/* SIZE/DISTANCE VARIABLES */
+$small-circle-size: 24px;
+$large-circle-size: 64px;
+$line-size: 2px;
+$buffer: 10px;
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+#testimonial {
+  width: 90%;
+  padding: 5%;
+  background-color: $grey;
+
+
+  div {
+    background-repeat: no-repeat;
+    background-image: 
+      url("../public/orange-circle.png"), // circle
+      url("../public/orange-line.png"),   // line
+      url("../public/orange-quote.png");  // quote
+    background-position:
+      $small-circle-size - ( $buffer / 2 ) 100%,                       // circle
+      ( $large-circle-size / 2 ) - $line-size ( $large-circle-size - $buffer ),  // line
+      0px 0px;                                                              // quote
+    background-size: 
+      $small-circle-size,                         // circle
+      $line-size calc(100% - $large-circle-size), // line
+      $large-circle-size;                         // quote
+    padding-left: $large-circle-size + ( $buffer * 4 );
+    max-width: 700px;
+    margin: auto;
+
+    div {
+      display: inline-block;
+      background-image: none;
+      border-top: 1px solid $white;
+      padding-top: 20px;
+      padding-left: 0px;
+      width: 66%;
+
+  
+
+      span {
+        font-size: .9em;
+        font-weight: bold;
+        width:  100%;
+      }
+    }
+  
+    a {
+      width: 24%;
+      display: inline-block;
+      background-color: $detail-blue;
+      color: $white;
+      padding: 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-align: center;
+      float: right;
+      margin-top: $large-circle-size;
+    }
+  }
+
+}
+
+.exercise-body {
+  border: 1px solid $grey;
+  width: 95%;
+  margin: auto;
+
+  .filter-header {
+    padding: 40px;
+
+    .filter-left, filter-right {
+      display: inline-block;
+    }
+
+    .filter-left {
+
+      .input-wrapper {
+        border-bottom: 1px solid $grey;
+        width: 250px;
+        padding-left: 10px;
+        list-style: none;
+
+        &:hover {
+          background-color: $grey;
+        }
+
+        input, label {
+          display: inline-block ;
+          padding: 10px;
+        }
+
+        input {
+          width: 16px;
+        }
+
+        label {
+          width: 150px;
+        }
+      }
+    }
+
+    .filter-right {
+      float: right;
+
+      input {
+        border: none;
+        background-color: inherit;
+        color: blue;
+        text-decoration: underline;
+        font-weight: bold;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .filter-box {
+      height: 300px;
+      overflow: scroll;
+      width: 250px;
+      border: 1px solid $grey;
+      display: inline-block;
+      position: absolute;
+      background-color: $white;
+      /* code smell :/ toggle button pushing it */
+      margin-left: -235px;
+      margin-top: 40px;
+      padding-left: 0px;
+    }
+
+    input.toggle {
+      border: none;
+      text-align: left;
+      width: 230px;
+      display: inline-block;
+      background-color: $grey;
+      border-bottom: 1px solid $black;
+      padding: 10px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.card {
+  display:  inline-block;
+  width:  30%;
+  padding: 1%;
+
+  img {
+    width: 400px;
+    max-width: 100%;
+  }
+
+  h5 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.83rem;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #testimonial div {
+    a {
+      width: 20%;
+    }
+
+    div {
+      padding-left: 0px;
+    }
+  }
+
+  .card {
+    display: block;
+    width: 96%;
+    padding: 4% 2%;
+    border-bottom: 1px solid $grey;
+
+    h5, p {
+      width: 400px;
+    }
+  }
+}
