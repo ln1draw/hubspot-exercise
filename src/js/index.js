@@ -74,7 +74,14 @@ function buildFilters() {
 	var genresBox = document.getElementById("genre-box");
 	genresBox.style.display = 'none';
 	document.getElementById('genre-toggle').addEventListener('click', function(e) {
-		genresBox.style.display = (genresBox.style.display === 'none') ? 'inline-block' : 'none'
+		var hiding = genresBox.style.display !== 'none';
+		if (hiding) {
+			genresBox.style.display = 'none';
+			e.target.setAttribute('aria-expanded', false);
+		} else {
+			genresBox.style.display = 'inline-block';
+			e.target.setAttribute('aria-expanded', true);
+		}
 	})
 
 	Object.keys(GENRES).sort().forEach(genre => {
@@ -101,8 +108,16 @@ function buildFilters() {
 
 	var yearBox = document.getElementById('year-box');
 	yearBox.style.display = 'none';
+
 	document.getElementById('year-toggle').addEventListener('click', function(e) {
-		yearBox.style.display = (yearBox.style.display === 'none') ? 'inline-block' : 'none'
+		var hiding = yearBox.style.display !== 'none';
+		if (hiding) {
+			yearBox.style.display = 'none';
+			e.target.setAttribute('aria-expanded', false);
+		} else {
+			yearBox.style.display = 'inline-block';
+			e.target.setAttribute('aria-expanded', true);
+		}
 	})
 
 	Object.keys(YEARS).sort().reverse().forEach(year => {
@@ -142,7 +157,7 @@ function buildGenreAndYear(item) {
 }
 
 function buildMediaCard(itemData) {
-	var card = document.createElement('div');
+	var card = document.createElement('p');
 	card.className = 'card';
 
 	var poster = document.createElement('img');
