@@ -37,3 +37,5 @@ These notes will be read by HubSpot developers. Drop us a line!
 - efficiency issues with loading. If I were doing it again, I would use a framework from the beginning. That would allow me to use a framework with opinions on states, that only reloads necessary chunks of the content, for example.
 
 - normally i would make this much DRYer. For example. years and genres do basically the same thing; would be easier/better to have "filter" methods and pass in the type (year vs. genre) instead of these repetitive "if" blocks.
+
+- I only half-fixed the accessibility issue with the cards--resolved by adding code (tabindex=0 on cards), not by fixing the semantic mistake that led to the problem in the first place.

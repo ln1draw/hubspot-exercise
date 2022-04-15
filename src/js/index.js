@@ -157,11 +157,13 @@ function buildGenreAndYear(item) {
 }
 
 function buildMediaCard(itemData) {
-	var card = document.createElement('p');
+	var card = document.createElement('section');
 	card.className = 'card';
+	card.tabIndex = 0;
 
 	var poster = document.createElement('img');
 	poster.src = itemData.poster;
+	poster.setAttribute('aria-hidden', true);
 	card.appendChild(poster)
 
 	var title = document.createElement('h5');
